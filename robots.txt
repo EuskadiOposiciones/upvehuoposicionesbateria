@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://euskadioposiciones.github.io/upvehuoposicionesbateria/sitemap.xml
+
+Sitemap: https://euskadioposiciones.github.io/ehuoposicionesbateria/sitemap.xml
