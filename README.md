@@ -1,57 +1,30 @@
-# Test OPE UPV/EHU 2026 — GitHub Pages
+# UPV/EHU Oposiciones — V2 conversión + SEO
 
-Micrositio centrado exclusivamente en la OPE 2023–2024 del PTGAS de la UPV/EHU para las escalas de acceso general:
+Versión estática preparada para GitHub Pages.
 
-- Escala Administrativa: 500 preguntas oficiales.
-- Escala Subalterna: 400 preguntas oficiales.
+## Publicación
+1. Sustituye los archivos de la raíz del repositorio por los de este paquete.
+2. El paquete ya incluye el archivo de verificación `googleb84d1a031c785654.html`; si en el repositorio hubiera además otros `google*.html`, consérvalos.
+3. Comprueba que GitHub Pages publica desde la rama/carpeta habitual.
 
-## Estructura SEO
+## Enlace real de la app
+Edita `assets/config.js` y pega la URL real en `appUrl`. Todos los CTA `data-app-cta` se actualizarán automáticamente y añadirán UTM. Si `appUrl` queda vacío, los botones llevan al bloque de precio de la web y no generan enlaces rotos.
 
-- `/` → búsqueda general: oposiciones UPV/EHU 2026, test EHU.
-- `/administrativo/` → test administrativo UPV/EHU, batería 500 preguntas.
-- `/subalterno/` → test subalterno UPV/EHU, batería 400 preguntas.
-- `/baterias/` → baterías oficiales EHU y funcionamiento del examen.
+## Precio configurado
+12,99 €/mes. Una suscripción incluye Administrativo + Subalterno. La web comunica 25 preguntas gratuitas por escala, coherente con el modelo de demo acordado.
 
-Cada página resuelve una intención principal para evitar canibalización.
+## Posicionamiento
+- Home: test/oposiciones EHU 2026 + propuesta comercial.
+- Administrativo: test administrativo EHU, 500 preguntas.
+- Administrativo/respuestas: respuestas batería administrativo EHU.
+- Administrativo/simulacro: simulacro administrativo EHU.
+- Subalterno: test subalterno EHU, 400 preguntas.
+- Subalterno/respuestas: respuestas batería subalterno EHU.
+- Subalterno/simulacro: simulacro subalterno EHU.
+- Baterías: baterías oficiales EHU.
+- OPE: plazo/plazas/estado del proceso sin canibalizar el home comercial.
 
-## Antes de publicar
-
-Edita `app.js` y completa:
-
-```js
-const SITE_CONFIG = {
-  appUrl: "ENLACE_GENERAL_DE_LA_APP",
-  adminUrl: "ENLACE_ADMINISTRATIVO_SI_EXISTE",
-  subalternoUrl: "ENLACE_SUBALTERNO_SI_EXISTE",
-  monthlyPrice: "X,XX €/mes"
-};
-```
-
-Si solo hay un enlace común a la app, basta con rellenar `appUrl`.
-
-## SEO técnico pendiente de la URL definitiva
-
-Cuando conozcas `usuario.github.io/repositorio/` conviene añadir:
-
-1. URL canonical absoluta en las cuatro páginas indexables.
-2. `sitemap.xml` con URLs absolutas.
-3. Sitemap en Google Search Console.
-4. Propiedad de Search Console para medir impresiones y clics reales.
-
-No se han incluido canonicals ni sitemap con una URL ficticia para no enviar señales SEO incorrectas.
-
-## Transparencia importante
-
-La web distingue:
-
-- **preguntas oficiales**: proceden de las baterías publicadas;
-- **respuestas contrastadas**: no se presentan como plantilla oficial de la UPV/EHU, ya que la universidad publica la batería sin soluciones oficiales.
-
-## Publicar en GitHub Pages
-
-1. Crear repositorio público.
-2. Subir el contenido de esta carpeta a la raíz.
-3. `Settings → Pages`.
-4. `Deploy from a branch`.
-5. Branch `main`, carpeta `/root`.
-
+## Mensaje legal/editorial
+- Preguntas: procedencia oficial de las baterías.
+- Respuestas: propias y contrastadas; nunca denominadas oficiales.
+- Producto independiente, no afiliado a UPV/EHU.
