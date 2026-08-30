@@ -1,15 +1,47 @@
 (function () {
   const cfg = window.EHU_SITE_CONFIG || {};
+  const analyticsQueue = [];
+
+  function flushAnalytics() {
+    if (!window.posthog || typeof window.posthog.capture !== 'function') return;
+    while (analyticsQueue.length) {
+      const item = analyticsQueue.shift();
+      try { window.posthog.capture(item.name, item.props); } catch (_) {}
+    }
+  }
 
   function track(name, props) {
+    const payload = props || {};
     try {
       if (window.posthog && typeof window.posthog.capture === 'function') {
-        window.posthog.capture(name, props || {});
+        window.posthog.capture(name, payload);
+      } else {
+        analyticsQueue.push({ name: name, props: payload });
       }
     } catch (_) {}
   }
 
-  // Navegación móvil
+  async function initPostHog() {
+    const key = (cfg.POSTHOG_KEY || '').trim();
+    if (!key) return;
+    try {
+      const mod = await import('https://cdn.jsdelivr.net/npm/posthog-js/+esm');
+      const ph = mod.default || mod;
+      ph.init(key, {
+        api_host: cfg.POSTHOG_HOST || 'https://eu.i.posthog.com',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true
+      });
+      window.posthog = ph;
+      flushAnalytics();
+    } catch (_) {
+      // La web sigue funcionando si el proveedor de analítica no carga.
+    }
+  }
+
+  initPostHog();
+
   const menuButton = document.querySelector('[data-menu-button]');
   const navLinks = document.querySelector('[data-nav-links]');
   if (menuButton && navLinks) {
@@ -19,7 +51,6 @@
     });
   }
 
-  // CTA de la app. Si todavía no hay URL, lleva al bloque de producto sin dejar enlaces muertos.
   document.querySelectorAll('[data-app-cta]').forEach(function (el) {
     const destination = (cfg.APP_URL || '').trim();
     if (destination) {
@@ -40,19 +71,25 @@
     });
   });
 
-  // Precio configurable.
+  const price = (cfg.PRICE || '').trim();
+  document.querySelectorAll('[data-price-section]').forEach(function (section) {
+    if (price) section.hidden = false;
+  });
   document.querySelectorAll('[data-price]').forEach(function (el) {
-    if ((cfg.PRICE || '').trim()) {
-      el.innerHTML = '<span>' + cfg.PRICE + '</span><small>' + (cfg.PRICE_SUFFIX || '') + '</small>';
-    } else {
-      el.textContent = 'Precio en la app';
+    if (price) {
+      el.innerHTML = '<span>' + price + '</span><small>' + (cfg.PRICE_SUFFIX || '') + '</small>';
     }
   });
+  document.querySelectorAll('[data-price-note]').forEach(function (el) {
+    const note = (cfg.PRICE_NOTE || '').trim();
+    if (note) el.textContent = note; else el.hidden = true;
+  });
 
-  // Enlaces oficiales configurables.
   const officialMap = {
     ope: cfg.OFFICIAL_OPE_URL,
     admin: cfg.OFFICIAL_ADMIN_URL,
+    adminbases: cfg.OFFICIAL_ADMIN_BASES_URL,
+    subbases: cfg.OFFICIAL_SUB_BASES_URL,
     portal: cfg.OFFICIAL_PORTAL_URL,
     bases: cfg.OFFICIAL_GENERAL_BASES_URL
   };
@@ -65,32 +102,35 @@
     }
   });
 
-  // Contacto opcional.
   document.querySelectorAll('[data-support-email]').forEach(function (el) {
     if (cfg.SUPPORT_EMAIL) {
       el.href = 'mailto:' + cfg.SUPPORT_EMAIL;
       el.textContent = cfg.SUPPORT_EMAIL;
+      el.hidden = false;
     } else {
       el.hidden = true;
     }
   });
 
-  // Canonical dinámico: funciona tanto en un dominio propio como en un GitHub Project Page.
-  let canonical = document.querySelector('link[rel="canonical"]');
-  if (!canonical) {
-    canonical = document.createElement('link');
-    canonical.rel = 'canonical';
-    document.head.appendChild(canonical);
+  const screenshotHost = document.querySelector('[data-app-screenshots]');
+  if (screenshotHost && Array.isArray(cfg.APP_SCREENSHOTS) && cfg.APP_SCREENSHOTS.length) {
+    screenshotHost.innerHTML = '';
+    cfg.APP_SCREENSHOTS.slice(0, 4).forEach(function (src, idx) {
+      const figure = document.createElement('figure');
+      figure.className = 'screenshot-card';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Captura real de la app de preparación UPV/EHU ' + (idx + 1);
+      img.loading = 'lazy';
+      figure.appendChild(img);
+      screenshotHost.appendChild(figure);
+    });
+    screenshotHost.hidden = false;
   }
-  canonical.href = location.origin + location.pathname;
 
-  // Eventos de lectura de páginas de alta intención.
   const pageType = document.body.dataset.pageType;
-  if (pageType) {
-    track(pageType + '_page_viewed', { page_path: location.pathname });
-  }
+  if (pageType) track(pageType + '_page_viewed', { page_path: location.pathname });
 
-  // Profundidad de lectura simple (25/50/75/90), compatible con PostHog si ya está cargado.
   const marks = [25, 50, 75, 90];
   const seen = new Set();
   window.addEventListener('scroll', function () {

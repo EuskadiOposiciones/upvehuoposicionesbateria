@@ -1,76 +1,54 @@
-# Web UPV/EHU 2026 — lista para GitHub Pages
+# Web UPV/EHU 2026 — V2 para GitHub Pages
 
-Landing comercial + páginas SEO para vender una app de entrenamiento de las baterías oficiales de la OPE UPV/EHU 2026.
+Landing comercial + páginas SEO para vender la app de entrenamiento de las baterías de la OPE UPV/EHU 2026.
 
-## Qué incluye
+## URL pública preparada
 
-- `index.html`: landing principal de conversión.
-- `administrativo-upv-ehu/`: página específica de Administrativa.
-- `subalterno-upv-ehu/`: página específica de Subalterna.
-- `respuestas-bateria-administrativo-upv-ehu/`: página SEO/confianza sobre respuestas.
-- `respuestas-bateria-subalterno-upv-ehu/`: equivalente para Subalterna.
-- `bolsa-trabajo-upv-ehu/`: información de bolsa con fuente oficial.
-- `assets/css/styles.css`: diseño responsive.
-- `assets/js/config.js`: **único archivo que debes editar para app/precio/contacto**.
-- `assets/js/site.js`: navegación, CTA, canonical dinámico y eventos de analítica.
-- `sitemap.xml`, `robots.txt`, `.nojekyll`, `404.html`.
+`https://euskadioposiciones.github.io/upvehuoposicionesbateria/`
 
-## Antes de publicar: 4 cambios
-
-### 1) Enlace de la app
-Abre `assets/js/config.js` y pega la URL real de Google Play/App Store:
-
-```js
-APP_URL: "https://...",
-```
-
-Mientras esté vacío, los CTA no quedan rotos: llevan al bloque de producto de la propia página.
-
-### 2) Precio
-En el mismo archivo:
-
-```js
-PRICE: "9,99 €",
-PRICE_SUFFIX: "/mes",
-```
-
-Si se deja vacío, la web muestra `Precio en la app`.
-
-### 3) URL de GitHub Pages
-La versión entregada presupone:
-
-`https://euskadioposiciones.github.io/ehuoposicionesbateria/`
-
-Si la URL final es distinta, desde la raíz ejecuta:
+Esta URL coincide con la entrada EHU que figura en el documento de control de Search Console del proyecto. Si cambia el repositorio, ejecuta:
 
 ```bash
 python tools/update-base-url.py https://TU-USUARIO.github.io/TU-REPO/
 ```
 
-Esto cambia `config.js`, `robots.txt` y `sitemap.xml` de una vez.
+## Qué mejora la V2
 
-### 4) Capturas reales
-La home incluye una vista conceptual creada con HTML/CSS. Antes de campaña final conviene sustituirla o complementarla con 2–3 capturas reales de la app. La copia ya está preparada para ello.
+- Canonical estático y `og:url` en cada página.
+- `og:image` 1200×630 incluida en `assets/img/`.
+- Home enlazada siempre a la URL canónica, sin `index.html`.
+- `404.html` marcado `noindex,nofollow`.
+- Ningún texto interno de producción visible.
+- La sección de precio se oculta si todavía no hay precio configurado.
+- La home explica la trazabilidad de respuestas sin afirmar que exista una plantilla oficial.
+- Administrativo incorpora titulación, tasa, perfiles, formato de examen y enlace de solicitud.
+- Subalterna incorpora grupo, titulación, tasa, plazas y formato de examen.
+- Las páginas de respuestas resuelven arriba la duda esencial: batería oficial sí; plantilla oficial enlazada por EHU, no.
+- PostHog puede cargarse automáticamente cuando se añade el project API key.
+- Galería de capturas reales opcional; no se muestran capturas inventadas como si fueran el producto final.
 
-## GitHub Pages
+## Configuración antes de vender
 
-Sube **el contenido de esta carpeta a la raíz del repositorio**, no la carpeta contenedora.
+Edita solo `assets/js/config.js`:
 
-En GitHub:
+```js
+APP_URL: "https://...",
+PRICE: "... €",
+PRICE_SUFFIX: "/mes",
+PRICE_NOTE: "Cancela cuando quieras", // solo si es cierto
+POSTHOG_KEY: "phc_...",
+APP_SCREENSHOTS: [
+  "assets/img/app-1.webp",
+  "assets/img/app-2.webp",
+  "assets/img/app-3.webp"
+]
+```
 
-1. `Settings` → `Pages`.
-2. `Build and deployment` → `Deploy from a branch`.
-3. Branch: `main`.
-4. Folder: `/ (root)`.
-5. Guardar.
+Si `PRICE` está vacío, toda la sección de precio permanece oculta. Si `APP_URL` está vacío, los CTA llevan al bloque que explica el producto y no generan un enlace muerto.
 
-Los enlaces son relativos, así que la web funciona tanto en un repositorio tipo `usuario.github.io` como en un Project Page `/repositorio/`.
+## Analítica
 
-## PostHog / analítica
-
-`site.js` ya emite eventos **si `window.posthog` existe**. No incluye ninguna clave ni secreto.
-
-Eventos preparados:
+Al añadir `POSTHOG_KEY`, `site.js` carga PostHog y registra:
 
 - `cta_app_click`
 - `home_page_viewed`
@@ -81,22 +59,21 @@ Eventos preparados:
 - `bolsa_page_viewed`
 - `scroll_depth_reached` (25/50/75/90)
 
-Para activar la captura, conserva o añade en el `<head>` el snippet de PostHog que ya use tu proyecto actual. No pegues claves privadas en el repositorio.
+El project API key de PostHog se utiliza en cliente por diseño; no pongas claves secretas o personales en este archivo.
 
-## Mensajes comerciales que NO deben cambiar sin motivo
+## Fuentes oficiales incrustadas
 
-1. **Las preguntas del examen ya están publicadas. Ahora toca dominarlas.**
-2. **No necesitas estudiar mejor. Necesitas repetir mejor.**
-3. **Hay algo peor que fallar una pregunta: aprenderla mal.**
-4. **Nosotros revisamos. Tú repites.**
-5. La web habla siempre de **respuestas revisadas y contrastadas**, nunca de “respuestas oficiales”, salvo que la EHU publique realmente una plantilla oficial.
-6. Plaza + bolsa se presentan juntas, pero la web no promete llamada ni contratación: remite a las condiciones oficiales.
+- Página general OPE 2023–2024 EHU.
+- Escala Administrativa EHU.
+- Bases específicas Administrativa BOPV 3396/2026.
+- Bases específicas Subalterna BOPV 3395/2026.
+- Bases generales BOPV 3397/2026.
+- Portal oficial de empleo EHU.
 
-## Datos oficiales incrustados (revisados 30/08/2026)
+## Antes del lanzamiento comercial
 
-- Administrativa: 37 plazas totales (36 libre + 1 discapacidad), batería máxima de 500 preguntas, examen de 60 + 20 de reserva en 80 minutos; errores/no contestadas no penalizan.
-- Subalterna: 10 plazas totales (9 libre + 1 discapacidad), batería máxima de 400 preguntas, examen de 40 + 20 de reserva en 60 minutos; errores/no contestadas no penalizan.
-- Solicitudes: 1–21 de septiembre de 2026.
-- Bases generales 9.4: aprobados sin plaza que alcancen la nota mínima indicada en las bases específicas se integran en la correspondiente bolsa temporal de la EHU.
-
-Fuentes oficiales enlazadas dentro de `assets/js/config.js`.
+1. Añadir enlace real de la app.
+2. Añadir precio y condiciones reales.
+3. Añadir capturas auténticas de la app.
+4. Completar las páginas de respuestas con ejemplos concretos solo cuando esas fichas estén certificadas para publicación.
+5. Probar el embudo completo desde móvil: Google → página → CTA → tienda → instalación/suscripción.
