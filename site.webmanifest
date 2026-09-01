@@ -1,9 +1,0 @@
-{
-  "name": "OPE Osakidetza 2026",
-  "short_name": "OPE Osakidetza",
-  "start_url": "/opeosakidetza/",
-  "display": "standalone",
-  "background_color": "#f5f8f8",
-  "theme_color": "#0f766e",
-  "icons": []
-}
