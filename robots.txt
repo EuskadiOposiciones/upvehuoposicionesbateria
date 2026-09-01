@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://euskadioposiciones.github.io/upvehuoposicionesbateria/sitemap.xml
