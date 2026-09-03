@@ -21,3 +21,4 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Title de Administrativo orientado a SERP: `37 plazas y batería de 500 preguntas`.
 - Baterías conservada sin cambios sustanciales.
 - Bolsa reforzada como intención SEO de larga vida.
+<!-- redeploy -->
