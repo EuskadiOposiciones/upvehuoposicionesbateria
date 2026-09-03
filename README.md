@@ -14,3 +14,10 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Fecha visible de actualización: 2 de septiembre de 2026.
 - Ajustes mobile-first en hero, hechos clave y datos de convocatoria.
 - No incluye captura de email, demo/test ni página específica de respuestas.
+
+## V8 SEO competitor response
+- Home convertida en hub de la OPE: 52 plazas PTGAS (48 acceso general + 4 promoción interna).
+- Administrativo enriquecido con datos oficiales: 37 plazas, 500 preguntas, 60+20 reservas, 80 minutos, 35 temas, tasa 20,68 €, titulación, perfiles y ausencia de penalización.
+- Title de Administrativo orientado a SERP: `37 plazas y batería de 500 preguntas`.
+- Baterías conservada sin cambios sustanciales.
+- Bolsa reforzada como intención SEO de larga vida.
