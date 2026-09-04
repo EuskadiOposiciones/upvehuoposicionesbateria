@@ -29,3 +29,11 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Enlazado interno desde home, Administrativo y Baterías.
 - Sitemap ampliado a 6 URLs con `lastmod`.
 - Sin publicar respuestas ni detalles de la metodología interna de contraste.
+
+## V8.6 · Search Console SEO (2026-09-04)
+- Home: refuerzo semántico suave de “OPE UPV/EHU 2026” e interlinking contextual hacia test/batería.
+- Administrativo: bloque específico “Test Administrativo UPV/EHU 2026” y enlaces contextuales.
+- Baterías: bloque orientado a intención “test UPV/EHU” y enlace reforzado a Administrativo/guía 500.
+- Subalterno: ampliación informativa completa (10 plazas, requisitos, batería, examen, tiempo, temario y perfiles), sin prometer producto.
+- Sitemap: `lastmod` de Subalterno actualizado.
+- Se conserva V8.5 de la guía de 500 preguntas.
