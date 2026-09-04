@@ -21,4 +21,11 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Title de Administrativo orientado a SERP: `37 plazas y batería de 500 preguntas`.
 - Baterías conservada sin cambios sustanciales.
 - Bolsa reforzada como intención SEO de larga vida.
-<!-- redeploy -->
+
+
+## V8.2 SEO
+- Administrativo: title/meta orientados a `500 preguntas` + `37 plazas`.
+- Nueva URL: `/bateria-500-preguntas-administrativo-ehu/`.
+- Enlazado interno desde home, Administrativo y Baterías.
+- Sitemap ampliado a 6 URLs con `lastmod`.
+- Sin publicar respuestas ni detalles de la metodología interna de contraste.
