@@ -65,3 +65,11 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Las métricas del clúster se actualizan de 42 → 41 revisiones individuales y de 11 → 12 correcciones.
 - Sitemap permanece en 10 URLs: V8.9 mejora profundidad y fiabilidad, no volumen de páginas.
 - Sin cambios de dominio, titles/H1 estabilizados ni páginas en euskera.
+
+## V8.10 · Recurrencia histórica reproducible (2026-09-05)
+- Se profundiza `/administrativo/que-preguntas-se-repiten/` sin crear una URL nueva.
+- La cifra 445/500 se formula con mayor precisión: 445 preguntas quedaron confirmadas por continuidad histórica sin discrepancia residual.
+- No se separa “reutilización literal” de “equivalencia” porque el dataset actual agrupa ambas y no permite reproducir esa subdivisión con rigor.
+- Se añade distribución por bloques de 100: 79 %, 91 %, 95 %, 97 % y 83 % de continuidad histórica confirmada.
+- El 11 % restante se explica íntegramente por 41 revisiones individuales, 12 correcciones y 2 salvedades.
+- Sitemap permanece en 10 URLs; sin cambios de dominio, titles/H1 ni euskera.
