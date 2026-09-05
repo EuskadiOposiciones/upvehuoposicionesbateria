@@ -47,3 +47,11 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Se mantiene congelado el title/H1 de las páginas que ya posicionan.
 - No se publica aún `preguntas-por-tema`: la clasificación 500→35 se incorporará solo cuando esté validada.
 - Sin cambios de dominio y sin páginas en euskera en esta versión.
+
+## V8.8 · Mapa batería → programa oficial (2026-09-05)
+- Nueva URL `/administrativo/preguntas-por-tema/`.
+- Cruce analítico de las 500 preguntas frente a los 35 temas oficiales: 374 encaje directo, 79 transversales y 47 sin encaje directo.
+- Se documentan los bloques sin encaje directo sin sugerir que puedan descartarse de la batería oficial.
+- Se refuerza el enlazado desde Administrativo, Radiografía y la guía de 500 preguntas.
+- Sitemap: 10 URLs indexables.
+- Sin cambios en titles/H1 ya estabilizados, sin euskera y sin cambio de dominio.

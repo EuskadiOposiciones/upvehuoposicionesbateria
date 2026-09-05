@@ -92,3 +92,24 @@ h3{font-size:1.22rem;margin-bottom:.4em}
  .wrap{width:min(100% - 28px,var(--max))}
  .ope-grid{grid-template-columns:1fr}.facts-table{grid-template-columns:1fr}.fact-row{border-right:0!important;border-bottom:1px solid var(--line)!important}.fact-row:last-child{border-bottom:0!important}.announce .wrap{justify-content:flex-start;gap:8px}.announce span{font-size:.82rem}.hero{padding:36px 0 42px}.section{padding:56px 0}h1{font-size:2.35rem;line-height:1.02}.lede{font-size:1.04rem}.data-strip,.admin-facts{grid-template-columns:1fr 1fr}.data{padding:14px}.data b{font-size:1.2rem}.actions .btn{width:100%}.proof-row{display:grid;gap:7px}.app-card{padding:17px;border-radius:18px}.mobile-priority{font-size:.88rem}.mobile-facts{grid-template-columns:1fr 1fr}.mobile-facts span{padding:9px}.subhero{padding:42px 0 30px}.subhero h1{font-size:2.2rem}
 }
+
+
+.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 34px}
+.fit-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.fit-card h2{font-size:1.35rem;margin:.25em 0 .45em}
+.fit-card p{margin:0;color:var(--muted)}
+.fit-direct{border-top:4px solid var(--brand)}
+.fit-related{border-top:4px solid var(--accent)}
+.fit-out{border-top:4px solid #8b9896}
+.topic-map{display:grid;gap:10px;margin:26px 0 40px}
+.topic-detail{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.topic-detail summary{display:grid;grid-template-columns:82px minmax(0,1fr) auto;gap:14px;align-items:center;cursor:pointer;padding:16px 18px;font-weight:800}
+.topic-detail summary:hover{background:#f6faf9}
+.topic-num{color:var(--brand);font-weight:950}
+.topic-name{color:var(--ink)}
+.topic-count{color:var(--muted);font-size:.85rem;font-weight:700;white-space:nowrap}
+.topic-body{padding:0 18px 16px;border-top:1px solid var(--line)}
+.topic-body p{margin:.85em 0 0}
+
+@media(max-width:900px){.fit-grid{grid-template-columns:1fr}.topic-detail summary{grid-template-columns:72px minmax(0,1fr);}.topic-count{grid-column:2;white-space:normal}}
+@media(max-width:560px){.topic-detail summary{grid-template-columns:1fr;gap:5px}.topic-count{grid-column:1}.topic-body{padding:0 14px 14px}}
