@@ -37,3 +37,13 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Subalterno: ampliación informativa completa (10 plazas, requisitos, batería, examen, tiempo, temario y perfiles), sin prometer producto.
 - Sitemap: `lastmod` de Subalterno actualizado.
 - Se conserva V8.5 de la guía de 500 preguntas.
+
+## V8.7 · Clúster de autoridad EHU (2026-09-05)
+
+- Nueva radiografía independiente de las 500 preguntas con datos propios y revisión de fiabilidad.
+- Nueva página de preguntas dudosas/revisadas con fuentes primarias y salvedades visibles.
+- Nueva página de recurrencia histórica: 445/500 preguntas con trazabilidad como reutilizadas o equivalentes de baterías EHU anteriores.
+- Administrativo se mantiene como página pilar; se refuerza el enlazado contextual con la guía de 500 preguntas y Baterías.
+- Se mantiene congelado el title/H1 de las páginas que ya posicionan.
+- No se publica aún `preguntas-por-tema`: la clasificación 500→35 se incorporará solo cuando esté validada.
+- Sin cambios de dominio y sin páginas en euskera en esta versión.
