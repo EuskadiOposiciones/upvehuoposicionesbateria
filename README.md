@@ -55,3 +55,13 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Se refuerza el enlazado desde Administrativo, Radiografía y la guía de 500 preguntas.
 - Sitemap: 10 URLs indexables.
 - Sin cambios en titles/H1 ya estabilizados, sin euskera y sin cambio de dominio.
+
+
+## V8.9 · Preguntas revisadas y control de calidad (2026-09-05)
+- Se profundiza `/administrativo/preguntas-dudosas/` sin crear una URL nueva.
+- Se publican las 12 correcciones administrativas documentadas, 2 salvedades técnicas y 6 ejemplos de las 41 revisiones individuales confirmadas.
+- Se aclara expresamente que “revisión individual” no equivale a “pregunta dudosa”.
+- Corrección de control de calidad: la pregunta 462 cambia A → D tras volver al Manual de archivo de gestión de la EHU; el documento de apoyo informativo aparece separado de la tipología de documentos administrativos.
+- Las métricas del clúster se actualizan de 42 → 41 revisiones individuales y de 11 → 12 correcciones.
+- Sitemap permanece en 10 URLs: V8.9 mejora profundidad y fiabilidad, no volumen de páginas.
+- Sin cambios de dominio, titles/H1 estabilizados ni páginas en euskera.
