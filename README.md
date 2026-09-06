@@ -73,3 +73,22 @@ Versión reconstruida tras auditoría SEO de Search Console y Documento Maestro 
 - Se añade distribución por bloques de 100: 79 %, 91 %, 95 %, 97 % y 83 % de continuidad histórica confirmada.
 - El 11 % restante se explica íntegramente por 41 revisiones individuales, 12 correcciones y 2 salvedades.
 - Sitemap permanece en 10 URLs; sin cambios de dominio, titles/H1 ni euskera.
+
+
+## V8.12 — SEO web + preposicionamiento de la app (06/09/2026)
+- Se mantienen intactos los 10 paths, titles y H1 congelados.
+- Se preposiciona el nombre de trabajo `Test UPV/EHU Administrativo` dentro de páginas existentes; no se crea landing nueva durante la migración.
+- `/administrativo/` incorpora el puente de producto: 500 preguntas, repetición de fallos, simulación 60+20/80 min y respuestas contrastadas.
+- `/baterias/` se amplía de forma aditiva y enlaza los cuatro análisis propios.
+- No se añade enlace a Google Play hasta publicación efectiva.
+
+
+## V8.13 · SEO pre-lanzamiento (06/09/2026)
+- Acumulativa sobre V8.12/V8.11.
+- Mantiene titles, H1 y las 10 URLs indexables.
+- Refuerza la intención OPE UPV/EHU 2026 en home sin crear una URL competidora.
+- Profundiza Baterías con temario/batería/examen y datos 35 · 500 · 60+20 · 80 min.
+- Refuerza guía 500, Administrativo, Preguntas por tema y Preguntas dudosas.
+- Añade favicon propio EO a todas las páginas.
+- No añade euskera ni expone metodología interna del repositorio.
+- La app de Administrativo permanece “próximamente” hasta publicación efectiva en Google Play.
