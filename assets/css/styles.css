@@ -68,7 +68,6 @@ h3{font-size:1.22rem;margin-bottom:.4em}
 .related-links h2{font-size:1.55rem;margin-bottom:.55em}
 .admin-facts{grid-template-columns:repeat(3,1fr)}
 
-
 .ope-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:26px 0}
 .ope-card{position:relative}.ope-card.featured{border-color:#9dccca;background:#f4fbf9}
 .ope-number{font-size:2.4rem;font-weight:950;line-height:1;color:var(--brand);margin-bottom:12px;letter-spacing:-.04em}
@@ -93,7 +92,6 @@ h3{font-size:1.22rem;margin-bottom:.4em}
  .ope-grid{grid-template-columns:1fr}.facts-table{grid-template-columns:1fr}.fact-row{border-right:0!important;border-bottom:1px solid var(--line)!important}.fact-row:last-child{border-bottom:0!important}.announce .wrap{justify-content:flex-start;gap:8px}.announce span{font-size:.82rem}.hero{padding:36px 0 42px}.section{padding:56px 0}h1{font-size:2.35rem;line-height:1.02}.lede{font-size:1.04rem}.data-strip,.admin-facts{grid-template-columns:1fr 1fr}.data{padding:14px}.data b{font-size:1.2rem}.actions .btn{width:100%}.proof-row{display:grid;gap:7px}.app-card{padding:17px;border-radius:18px}.mobile-priority{font-size:.88rem}.mobile-facts{grid-template-columns:1fr 1fr}.mobile-facts span{padding:9px}.subhero{padding:42px 0 30px}.subhero h1{font-size:2.2rem}
 }
 
-
 .fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 34px}
 .fit-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
 .fit-card h2{font-size:1.35rem;margin:.25em 0 .45em}
@@ -113,3 +111,24 @@ h3{font-size:1.22rem;margin-bottom:.4em}
 
 @media(max-width:900px){.fit-grid{grid-template-columns:1fr}.topic-detail summary{grid-template-columns:72px minmax(0,1fr);}.topic-count{grid-column:2;white-space:normal}}
 @media(max-width:560px){.topic-detail summary{grid-template-columns:1fr;gap:5px}.topic-count{grid-column:1}.topic-body{padding:0 14px 14px}}
+
+/* V10.1 — capturas reales de la app publicadas en Google Play */
+.app-media-block{margin:30px 0 38px}
+.app-media-block h2{margin-top:0!important}
+.app-media-lead{margin:-.2em 0 18px}
+.app-screenshot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.app-screenshot{margin:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(16,58,55,.08)}
+.app-screenshot img{display:block;width:100%;height:auto;aspect-ratio:526/296;object-fit:cover;background:#f4f7f6}
+.app-media-note{margin:10px 0 0!important;color:var(--muted)!important;font-size:.82rem}
+.app-media-link{margin:12px 0 0!important;font-weight:800}
+.app-admin-preview{max-width:660px;margin:20px auto 38px}
+.app-admin-preview .app-screenshot-grid{grid-template-columns:1fr}
+.app-admin-preview .app-media-note{text-align:center}
+.app-admin-preview .app-media-link{text-align:center}
+.app-battery-preview{margin-top:54px}
+
+@media(max-width:640px){
+ .app-screenshot-grid{grid-template-columns:1fr}
+ .app-media-block{margin:24px 0 32px}
+ .app-screenshot{border-radius:14px}
+}
