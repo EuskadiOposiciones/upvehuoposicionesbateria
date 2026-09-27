@@ -1,32 +1,73 @@
-# Lanzamiento app UPV/EHU — paquete GitHub
+# SEO UPV/EHU — ejecución puntos 1, 2, 4 y 9
 Fecha: 27/09/2026
+Rama de destino: `main`
+Repositorio: `EuskadiOposiciones/upvehuoposicionesbateria`
 
-## Repositorio
-`EuskadiOposiciones/upvehuoposicionesbateria`
+## Qué ejecuta este paquete
 
-## Motivo
-La app **Test Administrativo UPV/EHU** ya está publicada en Google Play:
-https://play.google.com/store/apps/details?id=com.jocyf.opeupvehuadministrativo
+### 1. Estado post-plazo en Administrativo
+- Mantiene la etiqueta oficial de la ficha EHU: `Abierta`.
+- Deja claro que el plazo de solicitudes **cerró el 21/09/2026**.
+- Indica que a 27/09 no están publicados tribunal, admitidos provisionales ni fecha/lugar del examen.
+- No cambia title, H1, canonical ni URL de `/administrativo/`.
 
-## Qué cambia
-- Se eliminan los mensajes de pre-lanzamiento de las páginas comerciales.
-- CTAs reales a Google Play en Home, Administrativo, Baterías y guía de 500 preguntas.
-- Administrativo conserva todos los bloques SEO añadidos el 19 y 21 de septiembre.
-- Estado de la OPE revisado el 27/09/2026: la ficha oficial sigue marcada como **Abierta**; el plazo de solicitudes fue 1–21 septiembre.
-- Subalterno deja claro que la app publicada es exclusivamente de Administrativo.
-- Radiografía, Preguntas dudosas y Recurrencia reciben CTA discreto, sin convertirlas en landings comerciales.
-- `assets/js/site.js` actualiza también los CTAs de páginas analíticas no reescritas (p. ej. Preguntas por tema y Bolsa) para evitar mensajes visibles de «próximamente».
-- Tests internos migrados de pre-lanzamiento a post-lanzamiento.
-- `lastmod` se actualiza solo para las páginas HTML modificadas estáticamente.
+### 2. UTM para todos los enlaces a Google Play
+`assets/js/site.js` añade automáticamente:
+- `utm_source=euskadioposiciones`
+- `utm_medium=website`
+- `utm_campaign=<pagina>`
+- `utm_content=cta_N`
 
-## SEO que NO se toca
-- Titles: sin cambios salvo la eliminación necesaria de «próximamente» en meta descriptions, no en `<title>`.
-- H1: sin cambios.
-- Canonicals: sin cambios.
-- URLs/arquitectura: sin cambios.
-- Navegación principal: misma estructura.
+Cada URL del clúster tiene campaña propia (`home`, `administrativo`, `bateria_500`, `baterias`, `radiografia_500`, etc.).
+No hace falta reescribir los enlaces de todas las páginas: el JS los etiqueta al cargar.
 
-## Archivos a subir
-Sube el contenido del ZIP conservando las rutas. Los archivos incluidos sustituyen a los actuales.
+### 4. Nueva landing de la app
+Nueva URL:
+`/administrativo/app-test-upv-ehu/`
 
-No subas el ZIP como un archivo dentro del repositorio esperando que GitHub Pages lo descomprima.
+Objetivo:
+- búsquedas de app/test UPV-EHU;
+- explicar el producto antes de Play;
+- enlazar análisis propio + práctica;
+- mantener transparencia sobre independencia y respuestas contrastadas.
+
+No se usa `SoftwareApplication` schema porque el precio/suscripción exacto no se ha codificado en la web y no se debe inventar `offers.price`.
+
+### 9. Subalterno con profundidad propia
+- `/subalterno/` pasa de página breve a hub completo.
+- Nueva URL:
+  `/subalterno/bateria-400-preguntas/`
+- Datos oficiales usados:
+  - 10 plazas;
+  - 9 libre + 1 discapacidad;
+  - 6 PL2 preceptivo + 3 PL1 preceptivo en libre;
+  - batería 400;
+  - 20 temas;
+  - examen 40 + 20;
+  - 60 minutos;
+  - sin penalización;
+  - mínimo 10/20;
+  - concurso máximo 9 puntos;
+  - tasa 20,68 €;
+  - Certificado de Escolaridad.
+- Se deja explícito que la app publicada es solo de Administrativo.
+
+## Archivos del ZIP
+- `administrativo/index.html`
+- `administrativo/app-test-upv-ehu/index.html`
+- `subalterno/index.html`
+- `subalterno/bateria-400-preguntas/index.html`
+- `assets/js/site.js`
+- `sitemap.xml`
+
+## Despliegue
+Descomprime el ZIP y sube el contenido a `main`, conservando las rutas y sustituyendo los archivos existentes cuando corresponda.
+
+## Fuentes oficiales verificadas el 27/09/2026
+Administrativo:
+https://www.ehu.eus/es/web/azp/epe-bilatzailea?acceso=&anyo=&estado=&fecha-convocatoria=&grupo=&idioma=es&pestanya=1&proceso=432&regimen=&tipo-convocatoria=1
+https://www.euskadi.eus/web01-bopv/es/bopv2/datos/2026/07/2603396a.shtml
+
+Subalterno:
+https://www.ehu.eus/es/web/azp/epe-bilatzailea?acceso=&anyo=&estado=&fecha-convocatoria=&grupo=&idioma=es&pestanya=1&proceso=433&regimen=&tipo-convocatoria=1
+https://www.euskadi.eus/web01-bopv/es/bopv2/datos/2026/07/2603395a.shtml
