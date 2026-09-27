@@ -1,36 +1,32 @@
-# SEO_UPVEHU_PROPUESTAS_2_Y_4_COMBINADAS
+# Lanzamiento app UPV/EHU — paquete GitHub
+Fecha: 27/09/2026
 
-Paquete delta listo para copiar sobre el repositorio `EuskadiOposiciones/upvehuoposicionesbateria`.
+## Repositorio
+`EuskadiOposiciones/upvehuoposicionesbateria`
 
-## Archivos que cambia
-- `administrativo/index.html`
-- `sitemap.xml` (solo `lastmod` de Administrativo a 2026-09-19)
+## Motivo
+La app **Test Administrativo UPV/EHU** ya está publicada en Google Play:
+https://play.google.com/store/apps/details?id=com.jocyf.opeupvehuadministrativo
 
-## Lo que deliberadamente NO cambia
-- `<title>`
-- `<h1>`
-- meta description
-- canonical
-- URL / arquitectura
-- navegación principal
-- páginas profundas
+## Qué cambia
+- Se eliminan los mensajes de pre-lanzamiento de las páginas comerciales.
+- CTAs reales a Google Play en Home, Administrativo, Baterías y guía de 500 preguntas.
+- Administrativo conserva todos los bloques SEO añadidos el 19 y 21 de septiembre.
+- Estado de la OPE revisado el 27/09/2026: la ficha oficial sigue marcada como **Abierta**; el plazo de solicitudes fue 1–21 septiembre.
+- Subalterno deja claro que la app publicada es exclusivamente de Administrativo.
+- Radiografía, Preguntas dudosas y Recurrencia reciben CTA discreto, sin convertirlas en landings comerciales.
+- `assets/js/site.js` actualiza también los CTAs de páginas analíticas no reescritas (p. ej. Preguntas por tema y Bolsa) para evitar mensajes visibles de «próximamente».
+- Tests internos migrados de pre-lanzamiento a post-lanzamiento.
+- `lastmod` se actualiza solo para las páginas HTML modificadas estáticamente.
 
-## Objetivo SEO
-Combina las dos mejoras: propuesta de valor analítica visible + metodología de verificación. Es la versión recomendada si se quieren desplegar ambas, porque evita sobrescribir un `administrativo/index.html` con otro paquete independiente.
+## SEO que NO se toca
+- Titles: sin cambios salvo la eliminación necesaria de «próximamente» en meta descriptions, no en `<title>`.
+- H1: sin cambios.
+- Canonicals: sin cambios.
+- URLs/arquitectura: sin cambios.
+- Navegación principal: misma estructura.
 
-## Benchmark competitivo usado
-- ApruebaTuOPE: https://apruebatuope.com/upv-ehu/administrativo/ y /preguntas
-- OsasunTest: https://www.osasuntest.es/ehu/escala-administrativa/
-- EuskadiOPE: https://euskadiope.es/oposiciones/ehu/escala-administrativa-upv-ehu
+## Archivos a subir
+Sube el contenido del ZIP conservando las rutas. Los archivos incluidos sustituyen a los actuales.
 
-La comparación se ha usado para mejorar claridad de propuesta de valor, confianza y enlazado interno; no para copiar estructura ni texto.
-
-## Despliegue
-1. Descomprime el ZIP.
-2. Copia `administrativo/index.html` sobre el archivo del mismo path del repositorio.
-3. Copia `sitemap.xml` sobre el sitemap actual.
-4. Publica el commit.
-5. Verifica que el title y H1 siguen idénticos y que la página devuelve 200 con canonical autorreferente.
-
-## Criterio durante la migración
-Este paquete respeta la decisión de no cambiar title, H1 ni arquitectura mientras la migración desde GitHub Pages siga consolidándose.
+No subas el ZIP como un archivo dentro del repositorio esperando que GitHub Pages lo descomprima.
