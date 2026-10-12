@@ -1,0 +1,50 @@
+EHU — VERSION LISTA PARA GITHUB · 12/10/2026
+================================================
+
+ESTE ZIP NO NECESITA EJECUTAR NINGUN SCRIPT.
+Los archivos ya estan modificados y preparados para reemplazar los existentes en:
+EuskadiOposiciones/upvehuoposicionesbateria (rama main)
+
+REEMPLAZAR ESTOS 6 ARCHIVOS EN LAS MISMAS RUTAS:
+
+1. /index.html
+2. /administrativo/index.html
+3. /administrativo/app-test-upv-ehu/index.html
+4. /administrativo/explorador-500/index.html
+5. /bateria-500-preguntas-administrativo-ehu/index.html
+6. /assets/js/site.js
+
+NO BORRAR NI REEMPLAZAR NINGUN OTRO ARCHIVO DEL REPOSITORIO.
+No hace falta subir este LEEME_ANTES_DE_SUBIR.txt al repositorio.
+
+CAMBIOS INCLUIDOS
+-----------------
+- Corrige "pago unico" por suscripcion en Home, Administrativo y landing de la app.
+- No inventa precio, periodicidad ni renovacion: remite a Google Play/la app.
+- CTA principal comercial: "Probar 25 preguntas gratis".
+- Mantiene "App en Google Play" en los headers.
+- Guia de las 500: ofrece 25 preguntas gratis en la app + 10 en la web.
+- Explorer: mejora la tabla en movil convirtiendola en tarjetas legibles.
+- PostHog: cta_label + cta_position en clics relevantes y visibilidad del CTA Play.
+- Scroll EHU: eventos al 25 %, 50 %, 75 % y 90 %.
+- Estado oficial de Administrativo comprobado el 12/10/2026 y escrito en HTML.
+- No cambia titles, H1, URLs, sitemap ni arquitectura SEO.
+
+COMPROBACION OFICIAL 12/10/2026
+-------------------------------
+La ficha oficial de la UPV/EHU sigue mostrando Escala Administrativa en estado "Abierta".
+El plazo de solicitudes fue del 1 al 21 de septiembre de 2026.
+Plazas: 36 turno libre + 1 reservada a personas con discapacidad.
+En la ficha consultada no figura aun tribunal, lista provisional ni fecha/lugar de examen.
+
+COMMIT SUGERIDO
+---------------
+EHU: corrige suscripcion y mejora conversion y medicion
+
+DESPUES DE PUBLICAR
+-------------------
+1. Abrir Home y Administrativo en una ventana privada.
+2. Confirmar que ya no aparece "pago unico".
+3. Probar los botones "Probar 25 preguntas gratis" y "10 preguntas en la web".
+4. Abrir Explorador en movil o modo responsive.
+5. En los dias siguientes revisar PostHog: cta_position y scroll_depth_reached.
