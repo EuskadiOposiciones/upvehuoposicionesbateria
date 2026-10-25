@@ -1,0 +1,53 @@
+
+name: Aplicar embudo de conversion EHU V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/embudo-v2.yml'
+      - 'scripts/aplicar_embudo_v2.py'
+      - 'assets/js/embudo-v2.js'
+      - 'assets/js/test-gratis-v2.js'
+      - 'assets/css/embudo-v2.css'
+      - 'tests/test_embudo_v2.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aplicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar la version existente
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Validar sintaxis de los scripts
+        run: |
+          python3 -m py_compile scripts/aplicar_embudo_v2.py
+          node --check assets/js/embudo-v2.js
+          node --check assets/js/test-gratis-v2.js
+
+      - name: Probar instalacion idempotente y preservacion de V1
+        run: python3 -m unittest discover -s tests -p 'test_embudo_v2.py' -v
+
+      - name: Aplicar V2 sobre las paginas actuales
+        run: python3 scripts/aplicar_embudo_v2.py
+
+      - name: Validar cambios sin errores de espacios
+        run: git diff --check
+
+      - name: Guardar solamente paginas modificadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html administrativo/index.html baterias/index.html administrativo/test-gratis/index.html administrativo/app-test-upv-ehu/index.html bateria-500-preguntas-administrativo-ehu/index.html sitemap.xml
+          if ! git diff --cached --quiet; then
+            git commit -m "EHU V2: test de 3 a 10 preguntas, CTAs adaptados y medicion"
+            git push origin HEAD:main
+          else
+            echo "Embudo V2 ya estaba aplicado; no hay cambios para guardar."
+          fi
