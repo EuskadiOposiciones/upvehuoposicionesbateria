@@ -1,0 +1,34 @@
+name: Aplicar mejoras SEO y conversion EHU
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/aplicar-mejoras-ehu.yml'
+      - 'scripts/aplicar_mejoras_ehu.py'
+      - 'assets/css/seo-ehu.css'
+      - 'assets/js/seo-ehu.js'
+      - 'assets/img/seo/ehu-social-1200x630.png'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  actualizar-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar sitio actual
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validar y aplicar mejoras sin borrar paginas
+        run: python3 scripts/aplicar_mejoras_ehu.py
+      - name: Guardar solo los archivos de la web modificados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html administrativo/index.html baterias/index.html bateria-500-preguntas-administrativo-ehu/index.html sitemap.xml
+          if ! git diff --cached --quiet; then
+            git commit -m "SEO EHU: pregunta real, CTA y capturas en paginas de entrada"
+            git push origin HEAD:main
+          else
+            echo "No hay nuevos cambios: mejora ya aplicada."
+          fi
