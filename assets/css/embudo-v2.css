@@ -1,0 +1,49 @@
+/* Embudo EHU v2: capa visual adicional. No modifica estilos V1. */
+.ehu-v2-quick-card{background:#fff;border:1px solid #d0e2dd;border-radius:18px;box-shadow:0 8px 26px rgba(11,71,63,.06);padding:clamp(1rem,2.4vw,1.6rem);margin:0 0 1.25rem}
+.ehu-v2-kicker{color:#11685e;font-size:.76rem;letter-spacing:.095em;font-weight:800;text-transform:uppercase;margin:0 0 .4rem}
+.ehu-v2-quick-card h2{font-size:clamp(1.16rem,2vw,1.52rem);line-height:1.3;margin:.2rem 0 .4rem}
+.ehu-v2-quick-card p{margin:.45rem 0 .95rem}
+.ehu-v2-question{font-weight:760;font-size:1rem;color:#183937}
+.ehu-v2-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+.ehu-v2-choices button{font:inherit;font-size:.88rem;text-align:left;padding:.82rem 1rem;border:1px solid #cbdeda;border-radius:11px;background:#f7faf9;color:#193d3a;cursor:pointer;line-height:1.42;min-height:58px}
+.ehu-v2-choices button:hover:not(:disabled){border-color:#087368;background:#f0f9f5}
+.ehu-v2-choices button:focus-visible{outline:3px solid #edb84c;outline-offset:2px}
+.ehu-v2-choices button:disabled{cursor:default;opacity:1}
+.ehu-v2-choices button.ehu-v2-right{border:2px solid #23814a;background:#eaf8ef}
+.ehu-v2-choices button.ehu-v2-wrong{border:2px solid #b95c3d;background:#fff0e8}
+.ehu-v2-inline-feedback{border:1px solid #c9e0d6;background:#f0f8f4;padding:1rem;border-radius:12px;margin:1rem 0}
+.ehu-v2-inline-feedback p{margin:.45rem 0}
+.ehu-v2-inline-feedback a{color:#075f55}
+.ehu-v2-inline-footer{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-top:1rem}
+.ehu-v2-inline-footer .btn{font-size:.9rem}
+.ehu-v2-inline-disclaimer{font-size:.79rem;color:#546a67}
+.ehu-v2-device-note{padding:.65rem .85rem;border-left:3px solid #138174;background:#f0f8f6;margin:.95rem 0;color:#28514b}
+.ehu-v2-device-note--android,.ehu-v2-device-note--desktop{display:none}
+.ehu-v2-device-android .ehu-v2-device-note--android{display:block}
+.ehu-v2-device-desktop .ehu-v2-device-note--desktop{display:block}
+.ehu-v2-test-intro{padding:.75rem .9rem;border-radius:10px;background:#f1f8f6;margin:1rem 0 1.2rem;border:1px solid #d0e5df}
+.ehu-v2-test-intro strong{color:#104f48}
+.ehu-v2-prelude{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;justify-content:space-between;margin:0 0 1.3rem}
+.ehu-v2-prelude p{margin:0;color:#486660;font-size:.9rem}
+.ehu-v2-prelude button{appearance:none;border:0;background:transparent;color:#075d54;text-decoration:underline;font:inherit;font-weight:750;cursor:pointer;padding:.5rem}
+.ehu-v2-prelude button:focus-visible{outline:3px solid #edb84c;outline-offset:2px}
+.ehu-v2-result h2{margin:.25rem 0 .9rem}
+.ehu-v2-result h3{margin:1.4rem 0 .65rem}
+.ehu-v2-errors{padding-left:1.25rem;line-height:1.65}
+.ehu-v2-errors li{padding:.25rem 0}
+.ehu-v2-topic-details{margin:1rem 0;color:#365653}
+.ehu-v2-topic-details summary{cursor:pointer;font-weight:700}
+.ehu-v2-result-actions{margin:1.5rem 0 0}
+.ehu-v2-result-actions .actions{display:flex;gap:.65rem;flex-wrap:wrap}
+.ehu-v2-qr-area{display:none;align-items:center;gap:1.2rem;padding:1rem;border-radius:13px;border:1px solid #bfded7;background:#f5fbf9;margin:1.1rem 0}
+.ehu-v2-qr-area img{display:block;width:135px;height:135px;object-fit:contain;background:#fff;border-radius:9px}
+.ehu-v2-qr-area p{margin:0;font-size:.9rem;line-height:1.6}
+.ehu-v2-device-desktop .ehu-v2-qr-area{display:flex}
+.ehu-v2-android-cta{display:none!important}
+.ehu-v2-device-android .ehu-v2-android-cta{display:inline-flex!important}
+.ehu-v2-muted-link{display:inline-block;margin-top:.9rem;color:#176a5e;text-decoration:underline;font-size:.9rem}
+.ehu-v2-device-android .seo-cta-row a[href*="play.google.com"]{order:-1}
+@media(max-width:680px){.ehu-v2-choices{grid-template-columns:1fr}.ehu-v2-quick-card{padding:1rem}.ehu-v2-inline-footer .btn{width:100%;text-align:center;justify-content:center}.ehu-v2-qr-area{flex-direction:column}.ehu-v2-result-actions .actions{flex-direction:column}.ehu-v2-result-actions .btn{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.ehu-v2-choices button{transition:none}}
+/* Respeta siempre los atributos hidden de los componentes interactivos. */
+.ehu-v2-prelude[hidden],.ehu-v2-inline-feedback[hidden],.quiz-stage[hidden],.quiz-result[hidden],.quiz-start[hidden]{display:none!important}
